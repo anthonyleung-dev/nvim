@@ -1,89 +1,101 @@
-# neovim-lua
+# Neovim Configuration
 
+#### **Neovide** with **NVIM v0.10.1**.
 
+#### Font: `Source Code Pro`
 
-## Getting started
+![Neovim Setup](/screens/screenshot.png)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Information
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+### Coding
 
-## Add your files
+- **[neoformat](https://github.com/sbdchd/neoformat)**: A powerful code formatting plugin.
+- **[Comment.nvim](https://github.com/numToStr/Comment.nvim)**: Simplifies commenting in code.
+- **[todo-comments.nvim](https://github.com/folke/todo-comments.nvim)**: Highlights and searches for TODO comments in code.
+- **[supermaven-nvim](https://github.com/supermaven-inc/supermaven-nvim)**: Provides AI-powered code completion and inline suggestions, enhancing the coding experience with Maven and other tools.
+- **[nvim-autopairs](https://github.com/windwp/nvim-autopairs)**: Automatically closes pairs like brackets and quotes.
+- **[neotest](https://github.com/nvim-neotest/neotest)**: A testing framework integrated with Neovim.
+  - **[neotest-jest](https://github.com/nvim-neotest/neotest-jest)**: Provides Jest testing integration.
 
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+### Colorscheme
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/anthonyleung/neovim-lua.git
-git branch -M main
-git push -uf origin main
-```
+- **[onedark.vim](https://github.com/joshdick/onedark.vim)**: OneDark theme with customization for terminal colors.
+- **[kanagawa.nvim](https://github.com/rebelot/kanagawa.nvim)**: A beautiful Kanagawa theme.
+- **[palenight.nvim](https://github.com/alexmozaidze/palenight.nvim)**: Palenight theme.
+- **[nordic.nvim](https://github.com/AlexvZyl/nordic.nvim)**: Nordic theme with extensive customization options.
+- **[tokyonight.nvim](https://github.com/folke/tokyonight.nvim)**: Tokyo Night theme.
+- **[catppuccin/nvim](https://github.com/catppuccin/nvim)**: Catppuccin theme with multiple flavor options.
 
-## Integrate with your tools
+### Git Integration
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/integrations/)
+- **[neogit](https://github.com/NeogitOrg/neogit)**: A Magit-like Git integration interface for Neovim.
+- **[gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)**: Git integration that shows signs in the gutter.
+- **[git-blame.nvim](https://github.com/f-person/git-blame.nvim)**: Displays Git blame information in the gutter.
+- **[diffview.nvim](https://github.com/sindrets/diffview.nvim)**: Provides a side-by-side diff view for Git.
 
-## Collaborate with your team
+### LSP (Language Server Protocol) and Autocompletion
 
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+- **[nvim-cmp](https://github.com/hrsh7th/nvim-cmp)**: A completion engine for Neovim.
+- **[friendly-snippets](https://github.com/rafamadriz/friendly-snippets)**: A collection of snippets for different languages.
+- **[lspkind.nvim](https://github.com/onsails/lspkind.nvim)**: Adds icons to the autocompletion menu.
+- **[LuaSnip](https://github.com/L3MON4D3/LuaSnip)**: A snippet engine for Neovim.
+- **[lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)**: Provides signature help for LSP functions.
+- **[mason.nvim](https://github.com/williamboman/mason.nvim)**: A package manager for LSP servers, DAP servers, linters, and formatters.
+- **[mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)**: Integrates Mason with lspconfig.
+- **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)**: A collection of configurations for Neovim's built-in LSP client.
+- **[none-ls.nvim](https://github.com/nvimtools/none-ls.nvim)**: A general-purpose LSP server for Neovim.
+- **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)**: Treesitter configurations and abstractions for Neovim.
+- **[typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim)**: TypeScript-specific tools for Neovim.
+- **[SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim)**: Provides JSON schema support for LSP.
 
-## Test and Deploy
+### UI Enhancements
 
-Use the built-in continuous integration in GitLab.
+- **[which-key.nvim](https://github.com/folke/which-key.nvim)**: Displays possible keybindings in a popup.
+- **[nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)**: A file explorer for Neovim.
+- **[toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)**: A terminal manager for Neovim.
+- **[telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)**: A fuzzy finder and search utility.
+- **[nvim-bqf](https://github.com/kevinhwang91/nvim-bqf)**: Enhances the quickfix window.
+- **[nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)**: Adds a scrollbar with diagnostics and search result markers.
+- **[treesj](https://github.com/Wansmer/treesj)**: Split and join code blocks.
+- **[dashboard-nvim](https://github.com/nvimdev/dashboard-nvim)**: Provides a customizable dashboard for Neovim.
+- **[lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)**: A status line configuration plugin.
+- **[nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)**: Highlights color codes in your code.
+- **[barbar.nvim](https://github.com/romgrk/barbar.nvim)**: A buffer management plugin with tabline support.
+- **[barbecue.nvim](https://github.com/utilyre/barbecue.nvim)**: Adds breadcrumbs and more to your Neovim UI.
 
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://docs.gitlab.com/ee/user/application_security/sast/)
+### Additional Tools
 
-***
+- **[nvm.nvim](https://github.com/pipoprods/nvm.nvim)**: Integrates Node Version Manager (NVM) into Neovim.
+- **[guess-indent.nvim](https://github.com/nmac427/guess-indent.nvim)**: Automatically guesses and sets the indentation for files.
+- **[vim-prisma](https://github.com/prisma/vim-prisma)**: Syntax highlighting for Prisma schema files.
 
-# Editing this README
+### Default LSPs
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:304e40551eade4f2c9e3fae8ca4dcca0?https://www.makeareadme.com/) for this template.
+- **intelephense**: PHP language support.
+- **pyright**: Python language server.
+- **bashls**: Bash language server.
+- **rust_analyzer**: Rust language server.
+- **jdtls**: Java Development Tools language server.
+- **marksman**: Markdown language server.
+- **graphql**: GraphQL language server.
+- **sqlls**: SQL language server.
+- **solidity**: Solidity language server.
+- **cssls**: CSS language server.
+- **html**: HTML language server.
+- **volar**: Vue language server.
+- **dockerls**: Docker language server.
+- **yamlls**: YAML language server.
+- **lemminx**: XML language server.
+- **jsonls**: JSON language server.
+- **eslint**: JavaScript and TypeScript linting and formatting.
+- **lua_ls**: Lua language server, especially for Neovim configurations.
+- **prismals**: Prisma schema language server.
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+### Default Linters and Formatters
 
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
-
+- **prettierd**: Fast Prettier for formatting various languages.
+- **stylua**: Lua formatter.
+- **shfmt**: Shell script formatter.
+- **shellcheck**: Linter for shell scripts.
+- **autopep8**: Formatter for Python code.
