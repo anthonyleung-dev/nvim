@@ -1,12 +1,3 @@
-local getcwd = function()
-	local file = vim.fn.expand("%:p")
-	-- to run inside a package root if exist
-	if string.find(file, "/packages/") then
-		return string.match(file, "(.-/[^/]+/)src")
-	end
-	return vim.fn.getcwd()
-end
-
 return {
 
 	"sbdchd/neoformat", -- Code formatting plugin
@@ -31,15 +22,6 @@ return {
 			"supermaven-inc/supermaven-nvim",
 			config = function()
 				require("supermaven-nvim").setup({
-					-- keymaps = {
-					-- 	accept_suggestion = "<S-space>",
-					-- 	clear_suggestion = "<C-]>",
-					-- 	accept_word = "<C-j>",
-					-- },
-					-- ignore_filetypes = { cpp = true },
-					-- log_level = "info", -- set to "off" to disable logging completely
-					-- disable_inline_completion = false, -- disables inline completion for use with cmp
-					-- disable_keymaps = false, -- disables built in keymaps for more manual control
 					disable_keymaps = true,
 				})
 			end,

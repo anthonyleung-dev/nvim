@@ -17,7 +17,7 @@ M.ensure_installed = {
 	"yamlls",
 	"lemminx",
 	"jsonls",
-	"eslint",
+	"tailwindcss",
 	"lua_ls",
 	"prismals",
 }

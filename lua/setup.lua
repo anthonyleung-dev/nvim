@@ -28,8 +28,14 @@ vim.diagnostic.config({
 	},
 })
 
--- Coplilot
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
+-- Workaround Telescope highlights bug: https://is.gd/Sjxegs
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
 
-vim.cmd("autocmd User TelescopePreviewerLoaded setlocal number")
+autocmd("User", {
+  pattern = "TelescopePreviewerLoaded",
+  callback = function()
+    vim.opt_local.splitkeep = "cursor"
+  end,
+  group = augroup("TelescopePluginEvents", {}),
+})

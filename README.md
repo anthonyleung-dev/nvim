@@ -63,7 +63,7 @@
 - **[nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)**: Highlights color codes in your code.
 - **[barbar.nvim](https://github.com/romgrk/barbar.nvim)**: A buffer management plugin with tabline support.
 - **[barbecue.nvim](https://github.com/utilyre/barbecue.nvim)**: Adds breadcrumbs and more to your Neovim UI.
-
+- **[render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim)**: Renders Markdown files in Neovim.
 ### Additional Tools
 
 - **[nvm.nvim](https://github.com/pipoprods/nvm.nvim)**: Integrates Node Version Manager (NVM) into Neovim.
