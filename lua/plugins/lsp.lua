@@ -86,23 +86,6 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
-	{
-		"nvim-treesitter/nvim-treesitter-context", -- Sticky context for code blocks
-		config = function()
-			require("treesitter-context").setup({
-				enable = true,
-				throttle = true,
-				max_lines = 0,
-				patterns = {
-					default = {
-						"class",
-						"function",
-						"method",
-					},
-				},
-			})
-		end,
-	},
 	-- TypeScript Support
 	{
 		"pmizio/typescript-tools.nvim", -- TypeScript-specific tools

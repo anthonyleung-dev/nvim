@@ -1,6 +1,5 @@
 return {
 	{
-		-- Keybinding Hints
 		"folke/which-key.nvim", -- Displays possible keybindings in a popup
 	},
 	-- File Explorer
@@ -123,7 +122,21 @@ return {
 		"MeanderingProgrammer/render-markdown.nvim",
 		opts = {},
 		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context", -- Sticky context for code blocks
+		config = function()
+			require("treesitter-context").setup({
+				enable = true,
+				throttle = true,
+				max_lines = 0,
+				patterns = {
+					default = {
+						"class",
+						"function",
+					},
+				},
+			})
+		end,
 	},
 }

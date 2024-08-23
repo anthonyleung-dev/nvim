@@ -12,11 +12,6 @@ return {
 			require("todo-comments").setup({})
 		end,
 	},
-	-- {
-	-- 	"github/copilot.vim",
-	-- 	lazy = false,
-	-- 	config = function() end,
-	-- },
 	{
 		{
 			"supermaven-inc/supermaven-nvim",

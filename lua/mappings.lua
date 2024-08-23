@@ -27,7 +27,9 @@ vim.keymap.set(
 )
 
 -- Rename
-vim.keymap.set("n", "<leader>rn", ":IncRename ")
+vim.keymap.set("n", "<leader>rn", function()
+	return ":IncRename " .. vim.fn.expand("<cword>")
+end, { expr = true })
 
 -- Remap Cmd+C and Cmd+V in insert mode
 vim.keymap.set("i", "<D-c>", '<C-o>"+y', { noremap = true, silent = true })
@@ -79,8 +81,8 @@ vim.keymap.set("n", "<leader>D", function()
 	vim.lsp.buf.type_definition()
 end, { desc = "LSP definition type", unpack(opts) })
 
-vim.keymap.set("n", "gr", function()
-	vim.lsp.buf.references()
+vim.keymap.set("n", "gr", function ()
+	vim.lsp.buf.references({ includeDeclaration = true })
 end, { desc = "LSP references", unpack(opts) })
 
 vim.keymap.set("n", "<leader>lf", function()
