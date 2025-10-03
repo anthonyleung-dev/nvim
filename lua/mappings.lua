@@ -117,3 +117,5 @@ end, { desc = "List workspace folders", unpack(opts) })
 local completion_preview = require("supermaven-nvim.completion_preview")
 vim.keymap.set("i", "<C-a>", completion_preview.on_accept_suggestion, { noremap = true, silent = true })
 -- vim.keymap.set("i", "<S-space>", completion_preview.on_accept_suggestion_word, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
+

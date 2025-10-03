@@ -15,16 +15,24 @@ vim.opt.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 
 -- Set the colorscheme
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError", numhl = "" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", numhl = "" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo", numhl = "" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "💡", texthl = "DiagnosticSignHint", numhl = "" })
+-- vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError", numhl = "" })
+-- vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "DiagnosticSignWarn", numhl = "" })
+-- vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "DiagnosticSignInfo", numhl = "" })
+-- vim.fn.sign_define("DiagnosticSignHint", { text = "💡", texthl = "DiagnosticSignHint", numhl = "" })
 
 vim.diagnostic.config({
 	virtual_text = {
 		prefix = "●",
 		spacing = 2,
 		source = "always",
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "💡",
+		},
 	},
 })
 
@@ -33,9 +41,9 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 autocmd("User", {
-  pattern = "TelescopePreviewerLoaded",
-  callback = function()
-    vim.opt_local.splitkeep = "cursor"
-  end,
-  group = augroup("TelescopePluginEvents", {}),
+	pattern = "TelescopePreviewerLoaded",
+	callback = function()
+		vim.opt_local.splitkeep = "cursor"
+	end,
+	group = augroup("TelescopePluginEvents", {}),
 })
