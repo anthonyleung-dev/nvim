@@ -31,7 +31,7 @@ return {
 					bold_number = true,
 					blend = 0.7,
 				},
-				override = {
+				overrides = {
 					NvimTreeGitStaged = { fg = "#03ff85" },
 					NvimTreeGitDirty = { fg = "#EBCB8B" },
 					NvimTreeGitNew = { fg = "#A3BE8C" },

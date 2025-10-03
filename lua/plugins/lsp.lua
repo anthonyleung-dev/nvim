@@ -27,14 +27,14 @@ return {
 		"saadparwaiz1/cmp_luasnip", -- Snippet completion source for nvim-cmp
 		after = "LuaSnip",
 	},
-	{
-		"ray-x/lsp_signature.nvim", -- Signature help for LSP functions
-		event = "VeryLazy",
-		opts = {},
-		config = function(_, opts)
-			require("lsp_signature").setup(opts)
-		end,
-	},
+	-- {
+	-- 	"ray-x/lsp_signature.nvim", -- Signature help for LSP functions
+	-- 	event = "VeryLazy",
+	-- 	opts = {},
+	-- 	config = function(_, opts)
+	-- 		require("lsp_signature").setup(opts)
+	-- 	end,
+	-- },
 	"hrsh7th/cmp-nvim-lua", -- Neovim Lua API completion
 	"hrsh7th/cmp-nvim-lsp", -- LSP completion source for nvim-cmp
 	"hrsh7th/cmp-buffer", -- Buffer completion source for nvim-cmp

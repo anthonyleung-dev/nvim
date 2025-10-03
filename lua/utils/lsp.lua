@@ -12,7 +12,7 @@ M.ensure_installed = {
 	"solidity",
 	"cssls",
 	"html",
-	"volar",
+	-- "volar",
 	"dockerls",
 	"yamlls",
 	"lemminx",

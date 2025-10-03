@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local lsp = require("utils.lsp")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -17,7 +16,7 @@ end
 -- Loop through each LSP server in the ensure_installed list and set it up
 for _, server in ipairs(lsp.ensure_installed) do
 	if server == "lua_ls" then
-		lspconfig.lua_ls.setup({
+		vim.lsp.config("lua_ls", {
 			capabilities = capabilities,
 			on_init = function(client)
 				local path = client.workspace_folders[1].name
@@ -52,7 +51,7 @@ for _, server in ipairs(lsp.ensure_installed) do
 			on_attach = on_attach,
 		})
 	elseif server == "jsonls" then
-		lspconfig.jsonls.setup({
+		vim.lsp.config("jsonls", {
 			settings = {
 				json = {
 					schemas = require("schemastore").json.schemas(),
@@ -63,7 +62,7 @@ for _, server in ipairs(lsp.ensure_installed) do
 			on_attach = on_attach,
 		})
 	else
-		lspconfig[server].setup({
+		vim.lsp.config(server, {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
