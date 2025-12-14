@@ -13,16 +13,6 @@ return {
 		end,
 	},
 	{
-		{
-			"supermaven-inc/supermaven-nvim",
-			config = function()
-				require("supermaven-nvim").setup({
-					disable_keymaps = true,
-				})
-			end,
-		},
-	},
-	{
 		"greggh/claude-code.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim", -- Required for git operations
