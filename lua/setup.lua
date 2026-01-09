@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 -- Set the colorscheme
-vim.opt.background = "dark"
+-- vim.opt.background = "dark"
 vim.opt.termguicolors = true
 
 -- vim.cmd("colorscheme onedark")
@@ -13,6 +13,12 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.clipboard = "unnamedplus"
+
+-- Performance
+vim.opt.lazyredraw = true
+vim.opt.updatetime = 250
+vim.opt.timeoutlen = 300
+vim.opt.ttyfast = true
 
 -- Set the colorscheme
 -- vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError", numhl = "" })

@@ -12,8 +12,10 @@ vim.keymap.set("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts)
 vim.keymap.set("n", "<leader>x", "<Cmd>BufferClose<CR>", opts)
--- Format code
-vim.keymap.set("n", "<leader>p", ":Neoformat<CR>", {})
+-- Format code and save
+vim.keymap.set("n", "<leader>p", function()
+	vim.lsp.buf.format({ async = false })
+end, { desc = "Format code" })
 
 -- Nerd Commenter
 vim.keymap.set("n", "<leader>/", function()
@@ -81,7 +83,7 @@ vim.keymap.set("n", "<leader>D", function()
 	vim.lsp.buf.type_definition()
 end, { desc = "LSP definition type", unpack(opts) })
 
-vim.keymap.set("n", "gr", function ()
+vim.keymap.set("n", "gr", function()
 	vim.lsp.buf.references({ includeDeclaration = true })
 end, { desc = "LSP references", unpack(opts) })
 
@@ -117,5 +119,4 @@ end, { desc = "List workspace folders", unpack(opts) })
 -- local completion_preview = require("supermaven-nvim.completion_preview")
 -- vim.keymap.set("i", "<C-a>", completion_preview.on_accept_suggestion, { noremap = true, silent = true })
 -- vim.keymap.set("i", "<S-space>", completion_preview.on_accept_suggestion_word, { noremap = true, silent = true })
-vim.keymap.set('n', '<leader>cc', '<cmd>ClaudeCode<CR>', { desc = 'Toggle Claude Code' })
-
+vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })

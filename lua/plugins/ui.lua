@@ -107,16 +107,26 @@ return {
 	},
 	-- Breadcrumbs
 	{
+		"SmiteshP/nvim-navic",
+		config = function()
+			require("nvim-navic").setup({
+				lsp = {
+					auto_attach = true,
+					preference = { "typescript-tools", "tsserver", "lua_ls", "rust_analyzer" },
+				},
+				safe_output = true,
+			})
+		end,
+	},
+	{
 		"utilyre/barbecue.nvim",
 		name = "barbecue",
 		version = "*",
 		dependencies = {
 			"SmiteshP/nvim-navic",
-			"nvim-tree/nvim-web-devicons", -- optional dependency
+			"nvim-tree/nvim-web-devicons",
 		},
-		opts = {
-			-- configurations go here
-		},
+		opts = {},
 	},
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
@@ -127,7 +137,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-context", -- Sticky context for code blocks
 		config = function()
 			require("treesitter-context").setup({
-				enable = true,
+				enable = false,
 				throttle = true,
 				max_lines = 0,
 				patterns = {

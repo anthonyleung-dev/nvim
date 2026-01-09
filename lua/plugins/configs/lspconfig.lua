@@ -61,10 +61,19 @@ for _, server in ipairs(lsp.ensure_installed) do
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+	elseif server == "rust_analyzer" then
+		vim.lsp.config("rust_analyzer", {
+			cmd = { "rust-analyzer" },
+			filetypes = { "rust" },
+			root_markers = { "Cargo.toml", "rust-project.json" },
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 	else
 		vim.lsp.config(server, {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
 	end
+	vim.lsp.enable(server)
 end

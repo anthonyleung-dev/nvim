@@ -11,7 +11,7 @@ return function()
 
 		-- webdev stuff
 		b.formatting.prettier.with({
-			filetypes = { "html", "markdown", "css", "javascript", "typescript" }, -- Add relevant filetypes
+			filetypes = { "html", "markdown", "css", "javascript", "typescript", "graphql" },
 		}),
 
 		-- Lua
@@ -19,9 +19,6 @@ return function()
 
 		-- Python
 		-- b.formatting.autopep8.with({ filetypes = { "python" } }),
-
-		-- Lua
-		b.formatting.stylua,
 
 		-- PHP
 		-- b.formatting.intelephense,
