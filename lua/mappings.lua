@@ -6,15 +6,16 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "Resume last search" })
 
 -- Key mappings for buffer topbar
 vim.keymap.set("n", "<C-p>", "<Cmd>BufferPick<CR>", opts)
 vim.keymap.set("n", "<Tab>", "<Cmd>BufferNext<CR>", opts)
 vim.keymap.set("n", "<S-Tab>", "<Cmd>BufferPrevious<CR>", opts)
 vim.keymap.set("n", "<leader>x", "<Cmd>BufferClose<CR>", opts)
--- Format code and save
+-- Format code
 vim.keymap.set("n", "<leader>p", function()
-	vim.lsp.buf.format({ async = false })
+	require("conform").format({ async = false, lsp_fallback = true })
 end, { desc = "Format code" })
 
 -- Nerd Commenter
@@ -120,3 +121,17 @@ end, { desc = "List workspace folders", unpack(opts) })
 -- vim.keymap.set("i", "<C-a>", completion_preview.on_accept_suggestion, { noremap = true, silent = true })
 -- vim.keymap.set("i", "<S-space>", completion_preview.on_accept_suggestion_word, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>cc", "<cmd>ClaudeCode<CR>", { desc = "Toggle Claude Code" })
+
+-- Spectre (Find and Replace)
+vim.keymap.set("n", "<leader>S", function()
+	require("spectre").toggle()
+end, { desc = "Toggle Spectre" })
+vim.keymap.set("n", "<leader>sw", function()
+	require("spectre").open_visual({ select_word = true })
+end, { desc = "Search current word" })
+vim.keymap.set("v", "<leader>sw", function()
+	require("spectre").open_visual()
+end, { desc = "Search selected text" })
+vim.keymap.set("n", "<leader>sf", function()
+	require("spectre").open_file_search({ select_word = true })
+end, { desc = "Search in current file" })

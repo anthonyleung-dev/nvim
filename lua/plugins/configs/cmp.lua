@@ -55,12 +55,12 @@ return function()
 			}),
 		  },
 		sources = cmp.config.sources({
+			{ name = "copilot" },
 			{ name = "nvim_lsp" },
+			{ name = "luasnip" }, -- For luasnip users - higher priority for snippets
 			{ name = "nvim_lua" },
 			{ name = "buffer" },
 			{ name = "path" },
-			{ name = "treesitter" },
-			{ name = "luasnip" }, -- For luasnip users.
 		}, {
 			{ name = "buffer" },
 		}),

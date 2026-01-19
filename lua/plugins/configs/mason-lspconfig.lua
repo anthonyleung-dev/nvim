@@ -4,6 +4,6 @@ return function()
 
 	mason_lspconfig.setup({
 		ensure_installed = ensure_installed,
-        automatic_installation = true,
+		automatic_installation = true,
 	})
 end

@@ -16,7 +16,9 @@ return {
 		version = "*",
 		config = function()
 			require("toggleterm").setup({
-				size = 10,
+				open_mapping = "<C-`>",
+				size = 15,
+				direction = "horizontal",
 				close_on_exit = true,
 				shade_terminals = true,
 			})
@@ -111,7 +113,20 @@ return {
 		config = function()
 			require("nvim-navic").setup({
 				lsp = {
-					auto_attach = true,
+					auto_attach = function(client, bufnr)
+						if not client.server_capabilities.documentSymbolProvider then
+							return false
+						end
+						local dominated = { "eslint", "emmet_ls" }
+						if vim.tbl_contains(dominated, client.name) then
+							return false
+						end
+						local ft = vim.bo[bufnr].filetype
+						if client.name == "graphql" and ft ~= "graphql" then
+							return false
+						end
+						return true
+					end,
 					preference = { "typescript-tools", "tsserver", "lua_ls", "rust_analyzer" },
 				},
 				safe_output = true,

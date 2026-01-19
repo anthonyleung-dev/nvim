@@ -25,7 +25,25 @@ require("lazy").setup({
 	-- colorscheme that will be used when installing plugins.
 	install = { colorscheme = { "onedark", "nordic", "habamax" } },
 	-- automatically check for plugin updates
-	checker = { enabled = true },
+	checker = {
+		enabled = true,
+		concurrency = 10,
+		notify = true,
+		frequency = 3600, -- check every hour
+	},
+})
+
+-- Auto-update plugins in background on VimEnter
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		-- Delay to let Neovim fully load first
+		vim.defer_fn(function()
+			require("lazy").sync({
+				show = false, -- run in background without opening UI
+				wait = false, -- non-blocking
+			})
+		end, 3000) -- 3 second delay after startup
+	end,
 })
 
 -- Define your config files pattern

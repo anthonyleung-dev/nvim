@@ -1,14 +1,25 @@
 return {
 	-- Themes/Colorschemes
 	{
-		"navarasu/onedark.nvim",
+		"olimorris/onedarkpro.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("onedark").setup({
-				style = "warmer",
+			require("onedarkpro").setup({
+				options = {
+					transparency = false,
+					cursorline = true,
+				},
+				highlights = {
+					NvimTreeGitDirty = { fg = "#E5C07B" },
+					NvimTreeGitStaged = { fg = "#98C379" },
+					NvimTreeGitNew = { fg = "#98C379" },
+					NvimTreeGitDeleted = { fg = "#E06C75" },
+					NvimTreeGitMerge = { fg = "#C678DD" },
+					NvimTreeGitRenamed = { fg = "#61AFEF" },
+				},
 			})
-			require("onedark").load()
+			vim.cmd("colorscheme onedark_vivid")
 		end,
 	},
 	{

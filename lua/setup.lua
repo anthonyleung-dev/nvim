@@ -9,10 +9,13 @@ vim.opt.termguicolors = true
 -- Enable line numbers
 vim.opt.number = true
 
--- Optionally, enable relative line numbers
-vim.opt.relativenumber = true
+-- Disable relative line numbers (show absolute only)
+vim.opt.relativenumber = false
 
 vim.opt.clipboard = "unnamedplus"
+
+-- Enable mouse support for resizing splits
+vim.opt.mouse = "a"
 
 -- Performance
 vim.opt.lazyredraw = true
@@ -39,6 +42,21 @@ vim.diagnostic.config({
 			[vim.diagnostic.severity.INFO] = "",
 			[vim.diagnostic.severity.HINT] = "💡",
 		},
+	},
+})
+
+-- Filetype detection for .env files
+vim.filetype.add({
+	filename = {
+		[".env"] = "dotenv",
+		[".env.local"] = "dotenv",
+		[".env.development"] = "dotenv",
+		[".env.production"] = "dotenv",
+		[".env.test"] = "dotenv",
+		[".env.example"] = "dotenv",
+	},
+	pattern = {
+		["%.env%.[%w_.-]+"] = "dotenv",
 	},
 })
 

@@ -4,6 +4,7 @@ local options = {
 		"lua",
 		"html",
 		"css",
+		"scss",
 		"rust",
 		"json",
 		"yaml",
@@ -18,11 +19,12 @@ local options = {
 		"graphql",
 		"tsx",
 		"php",
+		"dotenv",
 	},
 
 	highlight = {
 		enable = true,
-		use_languagetviree = true,
+		use_languagetree = true,
 	},
 
 	indent = { enable = false },

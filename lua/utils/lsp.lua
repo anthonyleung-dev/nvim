@@ -22,12 +22,15 @@ M.ensure_installed = {
 	"prismals",
 }
 
-M.ensure_installed_null_ls = {
+-- Formatters and linters for mason-tool-installer
+M.ensure_installed_tools = {
 	"prettierd",
 	"stylua",
 	"shfmt",
 	"shellcheck",
 	"autopep8",
+	"taplo",
+	"dotls"
 }
 
 return M
