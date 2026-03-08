@@ -1,7 +1,7 @@
 return function()
 	local icons = {
-		git_placement = "after",
-		modified_placement = "after",
+		git_placement = "signcolumn",
+		modified_placement = "signcolumn",
 		padding = " ",
 		glyphs = {
 			default = "󰈔",
@@ -24,7 +24,7 @@ return function()
 			},
 		},
 	}
-	--
+
 	local renderer = {
 		indent_width = 2,
 		indent_markers = {
@@ -35,14 +35,19 @@ return function()
 		icons = icons,
 		highlight_git = "all",
 	}
+
 	require("nvim-tree").setup({
 		hijack_cursor = true,
 		sync_root_with_cwd = true,
-		-- view = view,
-		-- system_open = system_open,
+		view = {
+			adaptive_size = true,
+		},
+		update_focused_file = {
+			enable = true,
+			update_root = false,
+		},
 		renderer = renderer,
 		git = { ignore = false },
 		diagnostics = { enable = true },
-		-- notify = notify,
 	})
 end

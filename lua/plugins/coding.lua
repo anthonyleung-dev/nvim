@@ -10,6 +10,15 @@ return {
 	},
 	{
 		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup({
+				pre_hook = function(ctx)
+					if vim.bo.filetype == "dotenv" then
+						return "# %s"
+					end
+				end,
+			})
+		end,
 	},
 	{
 		"folke/todo-comments.nvim", -- Highlight and search for TODO comments
@@ -73,37 +82,20 @@ return {
 	-- 	end,
 	-- },
 	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
+		"supermaven-inc/supermaven-nvim",
 		event = "InsertEnter",
 		config = function()
-			require("copilot").setup({
-				suggestion = {
-					enabled = true,
-					auto_trigger = true,
-					keymap = {
-						accept = "<C-a>",
-						accept_word = "<A-w>",
-						accept_line = "<A-a>",
-						prev = "<A-[>",
-						next = "<A-]>",
-						dismiss = "<A-e>",
-					},
+			require("supermaven-nvim").setup({
+				keymaps = {
+					accept_suggestion = "<C-a>",
+					accept_word = "<A-w>",
+					clear_suggestion = "<A-e>",
 				},
-				panel = {
-					enabled = true,
+				color = {
+					suggestion_color = "#888888",
 				},
-				filetypes = {
-					["*"] = true,
-				},
+				log_level = "off",
 			})
-		end,
-	},
-	{
-		"zbirenbaum/copilot-cmp",
-		dependencies = { "zbirenbaum/copilot.lua" },
-		config = function()
-			require("copilot_cmp").setup()
 		end,
 	},
 	{

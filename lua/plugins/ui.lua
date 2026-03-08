@@ -117,12 +117,8 @@ return {
 						if not client.server_capabilities.documentSymbolProvider then
 							return false
 						end
-						local dominated = { "eslint", "emmet_ls" }
+						local dominated = { "eslint", "emmet_ls", "graphql" }
 						if vim.tbl_contains(dominated, client.name) then
-							return false
-						end
-						local ft = vim.bo[bufnr].filetype
-						if client.name == "graphql" and ft ~= "graphql" then
 							return false
 						end
 						return true
@@ -148,20 +144,46 @@ return {
 		opts = {},
 		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
 	},
+	-- Document highlight - highlight all references of the symbol under cursor
 	{
-		"nvim-treesitter/nvim-treesitter-context", -- Sticky context for code blocks
+		"RRethy/vim-illuminate",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
-			require("treesitter-context").setup({
-				enable = false,
-				throttle = true,
-				max_lines = 0,
-				patterns = {
-					default = {
-						"class",
-						"function",
-					},
+			require("illuminate").configure({
+				providers = { "lsp", "regex" },
+				delay = 200,
+				large_file_cutoff = 2000,
+				large_file_overrides = {
+					providers = { "lsp" },
 				},
 			})
+		end,
+	},
+	-- Rainbow brackets - different colors for each nesting level
+	{
+		"HiPhish/rainbow-delimiters.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		config = function()
+			local rainbow_delimiters = require("rainbow-delimiters")
+			vim.g.rainbow_delimiters = {
+				strategy = {
+					[""] = rainbow_delimiters.strategy["global"],
+					vim = rainbow_delimiters.strategy["local"],
+				},
+				query = {
+					[""] = "rainbow-delimiters",
+					lua = "rainbow-blocks",
+				},
+				highlight = {
+					"RainbowDelimiterRed",
+					"RainbowDelimiterYellow",
+					"RainbowDelimiterBlue",
+					"RainbowDelimiterOrange",
+					"RainbowDelimiterGreen",
+					"RainbowDelimiterViolet",
+					"RainbowDelimiterCyan",
+				},
+			}
 		end,
 	},
 }

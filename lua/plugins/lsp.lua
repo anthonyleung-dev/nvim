@@ -76,6 +76,11 @@ return {
 		end,
 	},
 	-- Syntax Highlighting and Treesitter
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter",
+	-- 	lazy = false,
+	-- 	build = ":TSUpdate",
+	-- },
 	{
 		"nvim-treesitter/nvim-treesitter", -- Treesitter configurations and abstraction layer
 		event = { "BufReadPost", "BufNewFile" },
@@ -167,7 +172,8 @@ return {
 					end,
 					default_settings = {
 						["rust-analyzer"] = {
-							checkOnSave = {
+							checkOnSave = true,
+							check = {
 								command = "clippy",
 							},
 							cargo = {
@@ -177,6 +183,22 @@ return {
 					},
 				},
 			}
+		end,
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-context", -- Sticky context for code blocks
+		config = function()
+			require("treesitter-context").setup({
+				enable = false,
+				throttle = true,
+				max_lines = 0,
+				patterns = {
+					default = {
+						"class",
+						"function",
+					},
+				},
+			})
 		end,
 	},
 }

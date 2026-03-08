@@ -60,9 +60,11 @@ vim.filetype.add({
 	},
 })
 
--- Workaround Telescope highlights bug: https://is.gd/Sjxegs
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+
+
+-- Workaround Telescope highlights bug: https://is.gd/Sjxegs
 
 autocmd("User", {
 	pattern = "TelescopePreviewerLoaded",

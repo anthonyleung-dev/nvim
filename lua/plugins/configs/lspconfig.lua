@@ -61,14 +61,15 @@ for _, server in ipairs(lsp.ensure_installed) do
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
-	elseif server == "rust_analyzer" then
-		vim.lsp.config("rust_analyzer", {
-			cmd = { "rust-analyzer" },
-			filetypes = { "rust" },
-			root_markers = { "Cargo.toml", "rust-project.json" },
+	elseif server == "graphql" then
+		vim.lsp.config("graphql", {
+			filetypes = { "graphql" },
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+	elseif server == "rust_analyzer" then
+		-- Skip: rustaceanvim handles rust-analyzer setup
+		goto continue
 	else
 		vim.lsp.config(server, {
 			capabilities = capabilities,
@@ -76,4 +77,5 @@ for _, server in ipairs(lsp.ensure_installed) do
 		})
 	end
 	vim.lsp.enable(server)
+	::continue::
 end
